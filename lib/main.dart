@@ -26,7 +26,23 @@ class MyAppHome extends StatelessWidget {
         title: Text('Personal Expenses'),
       ),
       body: Column(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            width: 50,
+            child: Card(
+              color: Colors.black12,
+              child: Text('Petrol'),
+              elevation: 5,
+              margin: EdgeInsets.all(5),
+            ),
+          ),
+          Card(
+            child: Text('Diesel'),
+            elevation: 5,
+            margin: EdgeInsets.all(10),
+          ),
+        ],
       ),
     );
   }
