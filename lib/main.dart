@@ -26,21 +26,53 @@ class MyAppHome extends StatelessWidget {
         title: Text('Personal Expenses'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 50,
+            width: double.infinity,
             child: Card(
               color: Colors.black12,
-              child: Text('Petrol'),
+              child: Text('Personal Expenses'),
               elevation: 5,
               margin: EdgeInsets.all(5),
             ),
           ),
-          Card(
-            child: Text('Diesel'),
-            elevation: 5,
-            margin: EdgeInsets.all(10),
+          Column(
+            children: transaction.map((e) {
+              return Card(
+                  child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black87,
+                        width: 2,
+                      ),
+                    ),
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      '\$${e.amount}',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        e.title,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        e.date.toString(),
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ],
+              ));
+            }).toList(),
           ),
         ],
       ),
