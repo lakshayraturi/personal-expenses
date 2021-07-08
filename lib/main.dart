@@ -26,16 +26,49 @@ class MyAppHome extends StatelessWidget {
         title: Text('Personal Expenses'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: double.infinity,
             child: Card(
-              color: Colors.black12,
-              child: Text('Personal Expenses'),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0)),
+              shadowColor: Colors.black87,
+              child: Text(
+                'Personal Expenses',
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               elevation: 5,
-              margin: EdgeInsets.all(5),
+              //margin: EdgeInsets.all(5),
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Title'),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: 'Amount'),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.bubble_chart),
+                    hoverColor: Colors.blue,
+                    splashRadius: 25,
+                  ),
+                  //ElevatedButton(
+                  // onPressed: () {}, child: Text('Add Transaction'))
+                ],
+              ),
             ),
           ),
           Column(
