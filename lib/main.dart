@@ -19,7 +19,12 @@ class MyAppHome extends StatelessWidget {
     Transaction(
         id: 'GFGG95', title: 'Diesel', amount: 100.0, date: DateTime.now())
   ];
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+  //String titleInput;
+  //String amountInput;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -55,15 +60,20 @@ class MyAppHome extends StatelessWidget {
                 children: [
                   TextField(
                     decoration: InputDecoration(labelText: 'Title'),
+                    controller: titleController,
                   ),
                   TextField(
                     decoration: InputDecoration(labelText: 'Amount'),
+                    controller: amountController,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print(titleController.text);
+                    },
                     icon: Icon(Icons.bubble_chart),
                     hoverColor: Colors.blue,
                     splashRadius: 25,
+                    splashColor: Colors.yellow,
                   ),
                   //ElevatedButton(
                   // onPressed: () {}, child: Text('Add Transaction'))
