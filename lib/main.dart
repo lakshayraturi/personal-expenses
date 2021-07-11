@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import './widgets/new_transaction.dart';
-import './widgets/transaction_list.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,8 +14,6 @@ class MyApp extends StatelessWidget {
 class MyAppHome extends StatelessWidget {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
-  //String titleInput;
-  //String amountInput;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +42,6 @@ class MyAppHome extends StatelessWidget {
               //margin: EdgeInsets.all(5),
             ),
           ),
-          NewTransaction(),
-          TransactionList()
         ],
       ),
     );
